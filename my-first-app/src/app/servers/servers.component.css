@@ -1,3 +1,7 @@
 p {
     color: darkgoldenrod;
 }
+button {
+    padding: 3px;
+    color: white;
+}

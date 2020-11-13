@@ -5,11 +5,24 @@ import { Component, ViewEncapsulation } from '@angular/core';
     templateUrl: './server.component.html',
     styles: [`
     p {
-      color: red;
+      background-color: palegreen;
+      padding: 20px;
+      border: 1px solid darkgreen;
+      justify-content: center;
     }
     `],
-    encapsulation: ViewEncapsulation.ShadowDom
+  //encapsulation: ViewEncapsulation.ShadowDom
 })
 export class ServerComponent {
+    serverId = 129389;
+    serverStatus = 'online';
+
+    getServerStatus() {
+      return this.serverStatus;
+    }
+
+    getServerId() {
+      return this.serverId;
+    }
 
 }

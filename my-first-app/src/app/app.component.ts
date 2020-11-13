@@ -13,7 +13,7 @@ import { ViewEncapsulation } from '@angular/core';
     color: pink;
   }
   `],
-  encapsulation: ViewEncapsulation.ShadowDom
+  //encapsulation: ViewEncapsulation.ShadowDom
 })
 export class AppComponent {
   title = "Maya's Dating App";
