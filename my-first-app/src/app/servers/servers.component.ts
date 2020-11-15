@@ -13,11 +13,29 @@ import { Component, ViewEncapsulation } from '@angular/core';
 })
 export class ServersComponent {
 
-  allowNewServer = false;
+  allowRemoveServer = false;
+  serverCreationStatus = "Servers list unchanged"
+  serverName = "";
   constructor() {
     setTimeout(() => {
-      this.allowNewServer = true;
+      this.allowRemoveServer = true;
     }, 5000);
   }
 
+  ngOnInit() {
+
+  }
+
+  onAddServer() {
+      this.serverCreationStatus = "Server added to servers list"
+  }
+
+  onRemoveServer() {
+      this.serverCreationStatus = "Server removed from servers list"
+  }
+
+  onUpdateServerName(event: Event) {
+      // console.log(event);
+      this.serverName = (<HTMLInputElement>event.target).value;
+  }
 }

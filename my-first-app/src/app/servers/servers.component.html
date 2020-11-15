@@ -1,6 +1,34 @@
-<button type="button" class="btn btn-success" [disabled]="!allowNewServer">Add Server</button>
-<button class="btn btn-danger">Remove Server</button>
+<!-- <label>Server Name</label> -->
+<!-- <input 
+type="text" 
+class="form-control"
+(input)="onUpdateServerName($event)"
+style="margin-bottom: 2rem; margin-top: 1rem;">
+<hr> -->
+<input
+placeholder="Server Name" 
+type="text" 
+class="form-control"
+[(ngModel)]="serverName"
+style="margin-bottom: 2rem; margin-top: 1rem;">
 <hr>
+<p>{{ serverName }}</p>
+<div class="btn-toolbar">
+        <div class="btn-group mr-2">
+<button type="button" class="btn btn-success" style="padding: 0.5rem;"
+(click)="onAddServer()">Add Server</button>
+        </div>
+        <div class="btn-group mr-2">
+<button class="btn btn-danger" [disabled]="!allowRemoveServer" style="padding: 0.5rem;"
+(click)="onRemoveServer()">Remove Server</button>
+        </div>
+</div>
+<hr>
+<!-- <p [innerText]="allowRemoveServer">Can you delete a server? {{ allowRemoveServer }}</p>
+<p>Can you delete a server? {{ allowRemoveServer }}</p> -->
+<p>{{ serverCreationStatus }}</p>
+<div class="container" id="servers-list">
 <app-server></app-server>
 <app-server></app-server>
 <app-server></app-server>
+</div>
