@@ -16,6 +16,7 @@ export class ServersComponent {
   allowRemoveServer = false;
   serverCreationStatus = "Servers list unchanged"
   serverName = "";
+  
   constructor() {
     setTimeout(() => {
       this.allowRemoveServer = true;
