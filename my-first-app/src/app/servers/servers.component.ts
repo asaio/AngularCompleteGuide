@@ -16,6 +16,7 @@ export class ServersComponent {
   allowRemoveServer = false;
   serverCreationStatus = "Servers list unchanged"
   serverName = "";
+  userName = "";
 
   constructor() {
     setTimeout(() => {
@@ -38,5 +39,9 @@ export class ServersComponent {
   onUpdateServerName(event: Event) {
       // console.log(event);
       this.serverName = (<HTMLInputElement>event.target).value;
+  }
+
+  onResetUserName() {
+      this.userName = "";
   }
 }

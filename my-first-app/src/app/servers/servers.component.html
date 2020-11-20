@@ -31,4 +31,29 @@ style="margin-bottom: 2rem; margin-top: 0.5rem;">
 <app-server></app-server>
 <app-server></app-server>
 <app-server></app-server>
+<hr>
+<input placeholder="User Name"
+[(ngModel)]="userName"
+class="form-control"
+type="text"
+style="margin-bottom: 2rem; margin-top: 0.5rem;">
+<p>{{ userName }}</p>
+<button class="btn btn-primary"
+[disabled]="userName === ''"
+style="padding: 0.5rem;"
+(click)="onResetUserName()">
+Reset User</button>
+<hr>
+<input placeholder="User Name"
+[(ngModel)]="userName"
+class="form-control"
+type="text"
+style="margin-bottom: 2rem; margin-top: 0.5rem;">
+<p>{{ userName }}</p>
+<button class="btn btn-primary"
+[disabled]="!userName"
+style="padding: 0.5rem;"
+(click)="onResetUserName()">
+<!-- (click)="userName = ''" -->
+Reset User</button>
 </div>
