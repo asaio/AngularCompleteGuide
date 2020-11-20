@@ -17,12 +17,13 @@ export class ServersComponent {
   serverCreationStatus = "Servers list unchanged"
   serverName = "";
   userName = "";
-  serversListAlt = "";
+  serversListAlt = false;
+  serversList = [];
 
   constructor() {
-    setTimeout(() => {
-      this.allowRemoveServer = true;
-    }, 5000);
+      setTimeout(() => {
+        this.allowRemoveServer = true;
+      }, 5000); 
   }
 
   ngOnInit() {
@@ -31,12 +32,19 @@ export class ServersComponent {
 
   onAddServer() {
       this.serverCreationStatus = `Server ${this.serverName} added to servers list`;
-      this.serversListAlt = "add";
+      this.serversList.push(this.serverName);
+      this.serversListAlt = true;
   }
 
   onRemoveServer() {
       this.serverCreationStatus = `Server ${this.serverName} removed from servers list`;
-      this.serversListAlt = "remove";
+      for (let i = 0; i < this.serversList.length; i++) {
+        if (this.serversList[i] === this.serverName) {
+          this.serversList.splice(i,1);
+          break;
+        }
+      }
+      this.serversListAlt = true;
   }
 
   onUpdateServerName(event: Event) {

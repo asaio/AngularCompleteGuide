@@ -32,9 +32,9 @@ style="margin-bottom: 2rem; margin-top: 0.5rem;">
     <p>{{ serverCreationStatus }}</p>
 </ng-template>
 <div class="container" id="servers-list">
-<app-server></app-server>
-<app-server></app-server>
-<app-server></app-server>
+<app-server *ngFor="let server of serversList"></app-server>
+<!-- <app-server></app-server>
+<app-server></app-server> -->
 <hr>
 <input placeholder="User Name"
 [(ngModel)]="userName"
