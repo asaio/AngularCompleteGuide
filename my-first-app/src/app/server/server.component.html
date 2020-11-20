@@ -1,1 +1,2 @@
-<p>{{ 'Server' }} {{ getServerId() }} is {{ getServerStatus() }}</p>
+<p class="online" *ngIf="getServerStatus()=='online'">{{ 'Server' }} {{ getServerId() }} is {{ getServerStatus() }}</p>
+<p class="offline" *ngIf="getServerStatus()=='offline'">{{ 'Server' }} {{ getServerId() }} is {{ getServerStatus() }}</p>
