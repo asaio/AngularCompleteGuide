@@ -26,7 +26,11 @@ style="margin-bottom: 2rem; margin-top: 0.5rem;">
 <hr>
 <!-- <p [innerText]="allowRemoveServer">Can you delete a server? {{ allowRemoveServer }}</p>
 <p>Can you delete a server? {{ allowRemoveServer }}</p> -->
-<p>{{ serverCreationStatus }}</p>
+<!-- <p>{{ serverCreationStatus }}</p> -->
+<p *ngIf="serversListAlt; else noServer">{{ serverCreationStatus }}</p>
+<ng-template #noServer>
+    <p>{{ serverCreationStatus }}</p>
+</ng-template>
 <div class="container" id="servers-list">
 <app-server></app-server>
 <app-server></app-server>
