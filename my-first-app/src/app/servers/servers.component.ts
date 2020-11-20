@@ -17,7 +17,7 @@ export class ServersComponent {
   serverCreationStatus = "Servers list unchanged"
   serverName = "";
   userName = "";
-  serversListAlt = false;
+  serversListAlt = "";
 
   constructor() {
     setTimeout(() => {
@@ -31,12 +31,12 @@ export class ServersComponent {
 
   onAddServer() {
       this.serverCreationStatus = `Server ${this.serverName} added to servers list`;
-      this.serversListAlt = true;
+      this.serversListAlt = "add";
   }
 
   onRemoveServer() {
       this.serverCreationStatus = `Server ${this.serverName} removed from servers list`;
-      this.serversListAlt = true;
+      this.serversListAlt = "remove";
   }
 
   onUpdateServerName(event: Event) {

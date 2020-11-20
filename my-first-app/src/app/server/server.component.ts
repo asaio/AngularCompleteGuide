@@ -34,4 +34,8 @@ export class ServerComponent {
     getServerId() {
       return this.serverId;
     }
+
+    getColor() {
+      return this.serverStatus == 'online' ? 'lightgreen' : 'mistyrose';
+    }
 }
